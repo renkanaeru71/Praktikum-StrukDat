@@ -87,14 +87,8 @@ Metode ini digunakan setelah Anda membuat, mengubah, atau menambahkan kode baru 
 ---
 
 ## 🛠️ Alat dan Teknologi
-- **Bahasa Pemrograman:** C++ / Java / Python *(sesuaikan dengan praktikum)*
+- **Bahasa Pemrograman:** C++
 - **Editor Teks:** Visual Studio Code
 - **Version Control:** Git & GitHub
 
 ---
-
-## 📌 Catatan Tambahan
-> *"Bad programmers worry about the code. Good programmers worry about data structures and their relationships."*  
-> — **Linus Torvalds**
-
-Selamat mempraktikkan dan semangat belajar Struktur Data! ✨
