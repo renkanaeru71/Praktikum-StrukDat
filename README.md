@@ -48,32 +48,66 @@ Metode ini digunakan setelah Anda membuat, mengubah, atau menambahkan kode baru 
 
 #### Langkah-langkah via Terminal (Command Line):
 
-1. **Buka Terminal di VS Code:**
-   - Tekan `Ctrl + \`` (atau menu **Terminal** > **New Terminal**).
+Panduan singkat ini berisi langkah-langkah standar untuk menyimpan dan mengunggah (*push*) perubahan kode dari komputer lokal ke repository GitHub.
 
-2. **Cek Status Perubahan:**
+## 🚀 Alur Kerja Standar (Workflow)
+
+Untuk menghindari bentrokan (*conflict*) dan error, selalu ikuti urutan langkah berikut:
+
+### 1. Ambil Perubahan Terbaru (`git pull`)
+Sebelum mulai mengedit kode atau sebelum melakukan push, pastikan repository lokalmu sudah yang paling diperbarui:
+```bash
+git pull origin main
+```
+
+---
+
+### 2. Tandai Perubahan (`git add`)
+Setelah selesai mengedit atau menambah file baru, tandai file-file tersebut agar siap disimpan:
+```bash
+# Menandai semua perubahan dan file baru
+git add .
+
+# Atau jika hanya ingin menandai file tertentu:
+git add nama_file.ext
+```
+
+---
+
+### 3. Buat Catatan Perubahan (`git commit`)
+Simpan perubahan ke dalam riwayat lokal beserta pesan penjelasan yang jelas:
+```bash
+git commit -m "Deskripsi singkat perubahan yang dilakukan"
+```
+
+---
+
+### 4. Unggah ke GitHub (`git push`)
+Kirim commit lokal ke repository utama di GitHub:
+```bash
+git push origin main
+```
+
+---
+
+## ⚠️ Solusi Saat Terjadi Error / Push Ditolak
+
+Jika perintah `git push origin main` ditolak (*rejected*), ikuti langkah berikut:
+
+1. Tarik dan gabungkan perubahan dari GitHub:
    ```bash
-   git status
+   git pull origin main --rebase
    ```
-   *Langkah ini untuk melihat berkas mana saja yang telah diubah atau ditambahkan.*
-
-3. **Tambahkan Berkas ke Staging Area:**
-   ```bash
-   git add .
-   ```
-   *(Tanda titik `.` berarti menyertakan seluruh berkas yang baru atau mengalami perubahan).*
-
-4. **Simpan Perubahan dengan Pesan Commit:**
-   ```bash
-   git commit -m "Menambahkan tugas modul 1 struktur data"
-   ```
-   *Sesuaikan pesan commit dengan perubahan yang Anda lakukan.*
-
-5. **Kirim Perubahan ke GitHub (Push):**
+2. Jika tidak ada konflik, langsung push kembali:
    ```bash
    git push origin main
    ```
-   *(Jika cabang utama Anda bernama `master`, gunakan `git push origin master`).*
+3. Jika terjadi **CONFLICT**, selesaikan konflik pada file yang bermasalah, lalu jalankan:
+   ```bash
+   git add .
+   git rebase --continue
+   git push origin main
+   ```
 
 ---
 
